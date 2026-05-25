@@ -1,0 +1,709 @@
+================================================================================
+                 SCRIPT VIDEO - TATA CARA PENGGUNAAN SUPER PROGRAM
+                 WAWeb.js Interactive Learning Suite
+                 Author: rvnnsix | Telegram: @rvnnsix
+================================================================================
+
+================================================================================
+BAGIAN 1: PENGENALAN PROGRAM
+================================================================================
+
+Halo! Di video ini, gue mau jelasin cara pakai SUPER PROGRAM yang udah gue
+buat untuk belajar memahami cara kerja WhatsApp Web dari dalam.
+
+Program ini terdiri dari 2 file utama:
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ FILE UTAMA                                                                 │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  1. interaktif-waweb.js        → Versi dasar (untuk pemula)                │
+│     - 10 menu interaktif                                                      │
+│     - Cocok untuk mulai belajar                                              │
+│     - Load lebih cepat                                                        │
+│                                                                             │
+│  2. interaktif-waweb-deep.js   → Versi deep dive (untuk expert)             │
+│     - 10 bagian penjelasan detail                                            │
+│     - Coverage lebih lengkap                                                  │
+│     - 10x lebih detail dari versi basic                                       │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+KEDUA file ini butuh file WAWeb.js untuk bisa jalan. Pastikan WAWeb.js ada
+di folder yang sama.
+
+================================================================================
+BAGIAN 2: PERSIAPAN SEBELUM JALANKAN PROGRAM
+================================================================================
+
+STEP 1: Cek file yang dibutuhkan
+─────────────────────────────────
+
+Pastikan di folder lo ada:
+
+  📁 Folder Project/
+     ├── WAWeb.js              ← WAJIB ADA (file utama ~6.8MB)
+     ├── interaktif-waweb.js   ← Opsional (basic version)
+     └── interaktif-waweb-deep.js ← Opsional (deep version)
+
+STEP 2: Install Node.js
+────────────────────────
+
+Kalau belum punya Node.js, install dulu:
+- Download dari https://nodejs.org
+- Pilih versi LTS (Long Term Support)
+- Install seperti biasa
+
+STEP 3: Buka Terminal/Command Prompt
+─────────────────────────────────────
+
+Windows:
+  tekan Win + R, ketik "cmd", ENTER
+
+Atau pakai PowerShell:
+  tekan Win + X, pilih "Terminal" atau "PowerShell"
+
+STEP 4: Navigasi ke folder project
+───────────────────────────────────
+
+Misalnya folder lo di D:\test-ilmu-orang
+
+  cd D:\test-ilmu-orang
+
+Atau kalau udah di folder yang bener, langsung aja.
+
+================================================================================
+BAGIAN 3: CARA JALANKAN PROGRAM (VERSI BASIC)
+================================================================================
+
+UNTUK PEMULA → Pakai interaktif-waweb.js
+
+  node interaktif-waweb.js
+
+SCREENSHOT OUTPUT AWAL:
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│   ╔══════════════════════════════════════════════════════════════════╗    │
+│   ║                                                                  ║    │
+│   ║   🔍 SIMULASI INTERAKTIF: CARA BACA WAWeb.js                     ║    │
+│   ║                                                                  ║    │
+│   ║   Author: @rvnnsix | Telegram: @rvnnsix                          ║    │
+│   ║                                                                  ║    │
+│   ╚══════════════════════════════════════════════════════════════════╝    │
+│                                                                             │
+│   ⏳ Memuat WAWeb.js...                                                    │
+│   ✅ File dimuat! (182,422 baris, 6.8MB)                                   │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+SETELAH LOAD, LO AKAN LIHAT MENU:
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│  PILIH AKSI YANG MAU DIJALANKAN:                                           │
+│  ───────────────────────────────────────────────────────────────────────  │
+│                                                                             │
+│  1) 📊 Lihat Struktur File WAWeb.js                                        │
+│  2) 🔍 Demo Search: WebSocket URL                                          │
+│  3) 🔍 Demo Search: Module Definitions                                     │
+│  4) 🔍 Demo Search: API Endpoints                                          │
+│  5) 🔍 Demo Search: Error Messages                                        │
+│  6) 🔍 Demo Search: Custom Pattern                                         │
+│  7) 💻 Code Walkthrough: WebSocket Transport                              │
+│  8) 💻 Code Walkthrough: Binary Protocol                                   │
+│  9) 📖 Belajar: Apa itu Obfuscation?                                       │
+│  10) 🎯 Quiz: Test Pemahaman                                               │
+│  0) 🚪 Exit                                                                │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+BAGIAN 4: CARA JALANKAN PROGRAM (VERSI DEEP)
+================================================================================
+
+UNTUK EXPERT → Pakai interaktif-waweb-deep.js
+
+  node interaktif-waweb-deep.js
+
+SCREENSHOT OUTPUT AWAL:
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│   ╔════════════════════════════════════════════════════════════════════╗   │
+│   ║                                                                    ║   │
+│   ║   🔍 DEEP DIVE: CARA BACA WAWeb.js                                  ║   │
+│   ║   ─────────────────────────────────────────────────────           ║   │
+│   ║   Panduan paling detail untuk memahami WhatsApp Web dari A-Z      ║   │
+│   ║                                                                    ║   │
+│   ║   Author: rvnnsix                                                  ║   │
+│   ║   Telegram: @rvnnsix | IG: @tamainfinity_                          ║   │
+│   ║                                                                    ║   │
+│   ╚════════════════════════════════════════════════════════════════════╝   │
+│                                                                             │
+│   ℹ Memuat WAWeb.js...                                                     │
+│   ✅ File berhasil dimuat!                                                  │
+│   📊 Stats:                                                                │
+│   • Baris: 182,422                                                         │
+│   • Ukuran: 6.8 MB                                                         │
+│   • Karakter: 7,234,567                                                    │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+SETELAH LOAD, LO AKAN LIHAT MENU:
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│   1) 📖 PENDAHULUAN - Apa itu WAWeb.js?                                    │
+│   2) 📊 STRUKTUR FILE - Analyze bagian per bagian                          │
+│   3) 🔧 MODULE SYSTEM - __d() __r() __x() deep dive                        │
+│   4) 🔌 WEBSOCKET - Connection flow详解                                    │
+│   5) 📦 BINARY PROTOCOL - Encode/Decode详解                                │
+│   6) 🔐 AUTHENTICATION - Auth flow详解                                     │
+│   7) 💬 MESSAGE FLOW - Send/Receive详解                                    │
+│   8) 🎯 SEARCH PATTERNS - Praktis untuk extract                           │
+│   9) 🛠️  TOOLS & METHODS - Workflow reverse eng                             │
+│   10) 📋 CHEATSHEET - Ringkasan semua                                       │
+│   0) 🚪 Exit                                                                │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+BAGIAN 5: PENJELASAN SETIAP MENU (VERSI BASIC)
+================================================================================
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ MENU 1: Lihat Struktur File                                                 │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Fungsi: Tampilkan overview struktur WAWeb.js                                │
+│                                                                             │
+│ Yang lo dapet:                                                             │
+│ - Visualisasi 4 section utama file                                         │
+│ - Sample code dari setiap section                                          │
+│ - Perbandingan polyfills vs obfuscated code                                 │
+│                                                                             │
+│ Cocok untuk: Memahami anatomy file                                          │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ MENU 2: Demo Search - WebSocket URL                                         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Fungsi: Cari endpoint WebSocket WhatsApp                                    │
+│                                                                             │
+│ Yang lo dapet:                                                             │
+│ - Lokasi WebSocket URL (Line 163476)                                       │
+│ - Production & dev endpoints                                                 │
+│ - Penjelasan setiap bagian URL                                             │
+│                                                                             │
+│ Pattern: wss://web.whatsapp.com                                             │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ MENU 3: Demo Search - Module Definitions                                    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Fungsi: Cari module definitions di WAWeb.js                                  │
+│                                                                             │
+│ Yang lo dapet:                                                             │
+│ - Cara kerja __d() function                                                 │
+│ - Module penting (WAWebBackendApi, WAWebXHR, dll)                           │
+│ - Anatomi module definition                                                  │
+│                                                                             │
+│ Pattern: __d("ModuleName", [deps], callback)                                │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ MENU 4: Demo Search - API Endpoints                                         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Fungsi: Cari REST API endpoints                                             │
+│                                                                             │
+│ Yang lo dapet:                                                             │
+│ - /flows/json/ endpoint                                                      │
+│ - API patterns lainnya                                                      │
+│ - XHR implementation                                                        │
+│                                                                             │
+│ Pattern: /flows/json/, /api/, x-wa-group                                    │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ MENU 5: Demo Search - Error Messages                                         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Fungsi: Cari error handling & constants                                      │
+│                                                                             │
+│ Yang lo dapet:                                                             │
+│ - "WebSocket #" error messages                                              │
+│ - LogoutReason constants                                                    │
+│ - DisconnectReason enum                                                     │
+│                                                                             │
+│ Cocok untuk: Debugging & understand error flow                             │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ MENU 6: Custom Search                                                       │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Fungsi: Cari pattern custom sesuai keinginan lo                             │
+│                                                                             │
+│ Cara pakai:                                                                 │
+│ 1. Masukkan regex atau string                                               │
+│ 2. Program akan search di seluruh file                                      │
+│ 3. Tampilkan hasil dengan line numbers                                       │
+│                                                                             │
+│ Contoh pattern:                                                            │
+│ - "sendMessage" → cari fungsi send message                                   │
+│ - "pollCreation" → cari poll creation                                        │
+│ - "stickerMessage" → cari sticker handling                                   │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ MENU 7: Code Walkthrough - WebSocket Transport                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Fungsi: Deep dive ke WebSocket implementation                               │
+│                                                                             │
+│ Yang lo dapet:                                                             │
+│ - Anatomi WebSocketTransport class                                          │
+│ - Connection flow lengkap                                                   │
+│ - Event handlers (onopen, onmessage, onclose, onerror)                     │
+│                                                                             │
+│ Cocok untuk: Pahami real-time connection WhatsApp                            │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ MENU 8: Code Walkthrough - Binary Protocol                                  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Fungsi: Deep dive ke binary encoding WhatsApp                              │
+│                                                                             │
+│ Yang lo dapet:                                                             │
+│ - Anatomi WABinary module                                                   │
+│ - encodeProtobuf & decodeProtobuf                                           │
+│ - Message frame format (Tag + Length + Payload)                              │
+│                                                                             │
+│ Cocok untuk: Pahami format data WhatsApp                                    │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ MENU 9: Belajar - Apa itu Obfuscation?                                      │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Fungsi: Penjelasan tentang teknik obfuscation                               │
+│                                                                             │
+│ Yang lo dapet:                                                             │
+│ - Definisi obfuscation                                                      │
+│ - Before/after comparison                                                   │
+│ - 5 teknik obfuscation utama                                                │
+│ - Kenapa WA obfuscate code mereka                                           │
+│ - Tips deal dengan obfuscated code                                          │
+│                                                                             │
+│ Wajib baca sebelum mulai reverse engineering!                               │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ MENU 10: Quiz - Test Pemahaman                                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Fungsi: Test pemahaman lo tentang materi                                    │
+│                                                                             │
+│ Yang lo dapet:                                                             │
+│ - 5 pertanyaan pilihan ganda                                                │
+│ - Scoring system                                                            │
+│ - Feedback berdasarkan score                                                │
+│                                                                             │
+│ Target: Minimum 4/5 untuk dianggap paham                                    │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+BAGIAN 6: PENJELASAN SETIAP BAGIAN (VERSI DEEP)
+================================================================================
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ BAGIAN 1: PENDAHULUAN                                                       │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Isi:                                                                       │
+│ - Apa itu WAWeb.js?                                                         │
+│ - Bedanya source code vs bundled code                                       │
+│ - Kenapa WA obfuscate code mereka                                          │
+│ - Apa yang bisa lo lakukan dengan WAWeb.js                                  │
+│                                                                             │
+│ Durasi: ~3-5 menit                                                          │
+│ Target: Pemula yang belum tahu apa-apa                                      │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ BAGIAN 2: STRUKTUR FILE                                                     │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Isi:                                                                       │
+│ - Visualisasi 6 section utama (182,422 baris)                              │
+│ - Section 1: Polyfills (baris 1-1,000)                                    │
+│ - Section 2: Module Definitions Part 1 (baris 1,000-50,000)                 │
+│ - Section 3: Module Definitions Part 2 (baris 50,000-100,000)             │
+│ - Section 4: Module Definitions Part 3 (baris 100,000-140,000)            │
+│ - Section 5: Network & Protocol (baris 140,000-162,000)                    │
+│ - Section 6: WebSocket Transport (baris 162,000-170,000)                   │
+│ - Section 7: Misc & Bootstrap (baris 170,000-182,422)                      │
+│                                                                             │
+│ Durasi: ~10-15 menit                                                       │
+│ Target: Yang mau overview keseluruhan                                       │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ BAGIAN 3: MODULE SYSTEM                                                     │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Isi:                                                                       │
+│ - Anatomi module system WhatsApp (__d, __r, __x, __h)                       │
+│ - Stats: ada berapa module di file ini                                      │
+│ - Module dependencies                                                       │
+│ - 10 module penting yang perlu diketaui                                     │
+│                                                                             │
+│ Key Patterns:                                                              │
+│ - __d("Module", [deps], function) → Define module                          │
+│ - __r(moduleId) → Require module                                            │
+│ - __x(expr) → Eval expression                                               │
+│                                                                             │
+│ Durasi: ~10-15 menit                                                       │
+│ Target: Yang mau paham architecture                                         │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ BAGIAN 4: WEBSOCKET CONNECTION                                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Isi:                                                                       │
+│ - Penjelasan HTTP vs WebSocket                                              │
+│ - WebSocket endpoint (wss://web.whatsapp.com/ws/chat)                      │
+│ - WebSocketTransport class                                                  │
+│ - Connection flow lengkap (7 steps)                                        │
+│ - Event handlers reference                                                  │
+│                                                                             │
+│ Key Finding:                                                               │
+│ - Production URL ada di Line 163476                                         │
+│ - Dev URL ada di Line yang berbeda                                         │
+│ - Protocol: Binary frame dengan tag + length + payload                    │
+│                                                                             │
+│ Durasi: ~15-20 menit                                                       │
+│ Target: Yang mau paham koneksi real-time                                    │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ BAGIAN 5: BINARY PROTOCOL                                                   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Isi:                                                                       │
+│ - JSON vs Binary comparison                                                 │
+│ - WABinary module analysis                                                  │
+│ - encodeProtobuf & decodeProtobuf                                           │
+│ - Message frame format detail                                               │
+│ - Tag bytes explanation (0x00-0x05)                                         │
+│ - Protobuf basics                                                          │
+│                                                                             │
+│ Key Finding:                                                               │
+│ - WA tidak pakai JSON, pakai Protocol Buffers                               │
+│ - Binary lebih compact (~3x lebih kecil)                                   │
+│ - Tags menunjukkan message type                                            │
+│                                                                             │
+│ Durasi: ~15-20 menit                                                       │
+│ Target: Yang mau paham format data                                          │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ BAGIAN 6: AUTHENTICATION FLOW                                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Isi:                                                                       │
+│ - 2 auth methods: QR scan vs Pairing code                                   │
+│ - Credentials structure (noiseKey, signedIdentityKey, dll)                  │
+│ - Authentication flow 4 phases                                              │
+│ - Session storage format                                                    │
+│                                                                             │
+│ Key Finding:                                                               │
+│ - Bisa reconnect tanpa scan ulang                                           │
+│ - Credentials tersimpan di ./session/                                       │
+│ - authState & creds objects                                                │
+│                                                                             │
+│ Durasi: ~10-15 menit                                                       │
+│ Target: Yang mau paham auth system                                           │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ BAGIAN 7: MESSAGE FLOW                                                     │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Isi:                                                                       │
+│ - Send message flow (8 steps)                                              │
+│ - Receive message flow (7 steps)                                           │
+│ - 13 message types yang disupport                                           │
+│ - Message type references                                                   │
+│                                                                             │
+│ Message Types:                                                             │
+│ text, image, video, audio, document, sticker, location, contact, poll,      │
+│ list, buttons, template, reaction, newsletter                                │
+│                                                                             │
+│ Durasi: ~10-15 menit                                                       │
+│ Target: Yang mau paham message handling                                     │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ BAGIAN 8: SEARCH PATTERNS                                                   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Isi:                                                                       │
+│ - 4 kategori pattern: Network, Message, Error, Binary                      │
+│ - Quick reference table                                                    │
+│ - Example searches                                                         │
+│                                                                             │
+│ Useful Patterns:                                                            │
+│ - wss:// → WebSocket URLs                                                  │
+│ - __d(" → Module definitions                                               │
+│ - /flows/ → API endpoints                                                  │
+│ - messages.upsert → Message handler                                        │
+│                                                                             │
+│ Durasi: ~10 menit                                                          │
+│ Target: Yang mau quick reference                                            │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ BAGIAN 9: TOOLS & METHODS                                                   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Isi:                                                                       │
+│ - 4 tools yang dibutuhkan (VS Code, Terminal, DevTools, Hex Editor)         │
+│ - Search commands (PowerShell, Linux, Node.js)                             │
+│ - Extract sections (sed, wc, grep)                                         │
+│ - 5-step reverse engineering workflow                                      │
+│                                                                             │
+│ Workflow:                                                                  │
+│ 1. Identify Target → Mau cari apa?                                          │
+│ 2. Search Pattern → grep "__d("TARGET"                                     │
+│ 3. Find Context → Lihat before/after                                       │
+│ 4. Trace Dependencies → Understand data flow                               │
+│ 5. Document & Replicate → Test dengan Baileys                               │
+│                                                                             │
+│ Durasi: ~15 menit                                                          │
+│ Target: Yang mau praktikin                                                  │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ BAGIAN 10: CHEATSHEET                                                      │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Isi:                                                                       │
+│ - Ringkasan semua yang penting                                              │
+│ - File stats                                                                │
+│ - Key locations (line numbers)                                              │
+│ - Key patterns                                                              │
+│ - Module system summary                                                     │
+│ - WebSocket summary                                                        │
+│ - Binary protocol summary                                                   │
+│ - Authentication summary                                                    │
+│ - Message types                                                            │
+│ - Quick search commands                                                     │
+│ - Resources (Baileys, WA Web Rev, dll)                                     │
+│                                                                             │
+│ Durasi: ~5 menit (baca cepat aja)                                           │
+│ Target: Yang mau summary                                                    │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+BAGIAN 7: TIPS & TRICK
+================================================================================
+
+TIPS 1: Mulai dari Mana?
+─────────────────────────
+
+Untuk PEMULA:
+  → Mulai dari versi BASIC (interaktif-waweb.js)
+  → Mulai dari MENU 1-5 (dasar)
+  → Baca MENU 9 (Obfuscation) sebelum mulai
+  → Test MENU 6 (Custom Search) untuk eksperimen
+
+Untuk EXPERT:
+  → Langsung pakai versi DEEP (interaktif-waweb-deep.js)
+  → Mulai dari BAGIAN 1-2 (overview)
+  → Fokus ke BAGIAN 4-5 (WebSocket & Binary)
+  → Pakai BAGIAN 10 (Cheatsheet) sebagai reference
+
+
+TIPS 2: Cara Efektif Belajar
+─────────────────────────────
+
+1. Baca materi sekali tanpa fokus detail
+2. Jalankan program dan follow setiap step
+3. Catat hal-hal penting
+4. Repeat untuk materi yang belum paham
+5. Praktik dengan custom search
+
+
+TIPS 3: Troubleshooting
+───────────────────────
+
+MASALAH: "File tidak ditemukan"
+  → Pastikan WAWeb.js ada di folder yang sama
+  → Cek dengan: ls -la (Linux/Mac) atau dir (Windows)
+
+MASALAH: "Node.js tidak ditemukan"
+  → Install Node.js dari https://nodejs.org
+  → Restart terminal setelah install
+
+MASALAH: "Load lama banget"
+  → Normal! File WAWeb.js 6.8MB
+  → Tunggu saja, sekali load aja kok
+
+
+TIPS 4: Keyboard Shortcuts
+──────────────────────────
+
+Saat program running:
+  - ENTER → Lanjut ke step berikutnya
+  - Ctrl+C → Keluar program
+  - Ketik angka + ENTER → Pilih menu
+
+
+TIPS 5: Export Hasil
+────────────────────
+
+Lo bisa redirect output ke file:
+  node interaktif-waweb.js > output.txt
+
+Ini berguna untuk:
+  - Simpan hasil search
+  - Dokumentasi
+  - Backup notes
+
+================================================================================
+BAGIAN 8: FLOWCHART PENGGUNAAN
+================================================================================
+
+                    ┌─────────────────────┐
+                    │   BUKA TERMINAL      │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │ cd ke folder project │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │ punya Node.js?       │
+                    └──────────┬──────────┘
+                               │
+              ┌────────────────┴────────────────┐
+              │ NO                     │ YES      │
+              ▼                         ▼          │
+    ┌─────────────────┐     ┌─────────────────────┐│
+    │ Install Node.js │     │ punya WAWeb.js?     ││
+    └────────┬────────┘     └──────────┬──────────┘│
+             │                         │           │
+             └────────────────┬────────┘           │
+                              │ NO                 │
+                              ▼                    │
+                    ┌─────────────────┐            │
+                    │ Tambah WAWeb.js  │            │
+                    │ ke folder        │            │
+                    └────────┬────────┘            │
+                             │ YES                  │
+                             ▼                      │
+              ┌──────────────────────────────┐      │
+              │  Pilih versi:               │      │
+              │  BASIC atau DEEP?           │      │
+              └──────────────┬──────────────┘      │
+                             │                      │
+          ┌──────────────────┴──────────────────┐ │
+          │                                        │ │
+          ▼                                        ▼ │
+  ┌─────────────────┐                    ┌─────────────────┐│
+  │ node           │                    │ node            ││
+  │ interaktif-    │                    │ interaktif-     ││
+  │ waweb.js       │                    │ waweb-deep.js   ││
+  └────────┬────────┘                    └────────┬────────┘│
+           │                                    │        │
+           ▼                                    ▼        │
+  ┌─────────────────┐                  ┌──────────────┐  │
+  │ Baca 10 Menu    │                  │ Baca 10      │  │
+  │ Interaktif      │                  │ Bagian Deep  │  │
+  └────────┬────────┘                  └───────┬──────┘  │
+           │                                   │         │
+           └─────────────────┬─────────────────┘         │
+                             ▼                             │
+                   ┌─────────────────────┐                │
+                   │   APAKAH SUDAH      │                │
+                   │   PAHAM?            │                │
+                   └──────────┬──────────┘                │
+                              │                           │
+              ┌───────────────┴───────────────┐          │
+              │ NO                      │ YES   │          │
+              ▼                          ▼       │          │
+     ┌─────────────────┐      ┌───────────────┐│          │
+     │ Repeat / Baca   │      │ SELAMAT!      ││          │
+     │ Ulang           │      │ Lo udah bisa  ││          │
+     └─────────────────┘      │ reverse WA!   ││          │
+                              └───────────────┘          │
+                                                  EXIT ◄─┘
+
+================================================================================
+BAGIAN 9: KONTAK & RESOURCES
+================================================================================
+
+📱 Author: rvnnsix
+   Telegram: @rvnnsix
+   Instagram: @tamainfinity_
+
+📚 Resources:
+   - Baileys Library: github.com/WhiskeySockets/Baileys
+   - WA Web Rev: github.com/sigalor/whatsapp-web-rev
+   - WA Protocol Docs: docs.whatsapp.com
+
+📁 File Pendukung:
+   - WAWeb_README.txt → Dokumentasi lengkap
+   - WAProto.proto.txt → Protocol Buffer definitions
+   - script-video.txt → Script video lama
+
+================================================================================
+BAGIAN 10: CLOSING
+================================================================================
+
+Jadi gitu cara pakai super program ini.
+
+Ingat: Kunci utama dalam reverse engineering WAWeb.js adalah PATTERN MATCHING
+dan TRACE THE FLOW. Jangan coba baca seluruh file, tapi fokus ke pattern
+yang lo butuhin.
+
+Terus belajar, terus eksperimen, dan jangan pernah berhenti!
+
+Kalau ada pertanyaan, langsung contact:
+   Telegram: @rvnnsix
+   Instagram: @tamainfinity_
+
+Stay hungry, stay foolish!
+
+================================================================================
+                              END OF SCRIPT
+================================================================================

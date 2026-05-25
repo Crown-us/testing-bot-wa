@@ -52,6 +52,24 @@ Total **21 categories** dengan **150+ patterns**:
 - Chat & Messages
 - Dan lainnya...
 
+## ⚠️ WARNING - GalaxyX.js
+
+File `GalaxyX.js` berisi script yang **sangat powerful** dan memiliki kemampuan:
+
+- **Akses penuh ke sistem file** - bisa read/write/delete file
+- **Eksekusi command shell** - bisa jalanin perintah sistem
+- **OCR & media processing** - bisa akses webcam, mic, screen capture
+- **Full WhatsApp API access** - bisa kirim/terima/manipulasi semua pesan
+
+### Penggunaan:
+
+> Script ini disediakan **seperti pisau dapur** - bisa untuk masak enak, bisa juga untuk hal berbahaya. Terserah klien masing-masing bagaimana cara pakainya. **Yang bikin bot itu cuma kasih pisau nya, bukan yang pakai.**
+
+- Pastikan gunakan di environment yang terisolasi
+- Jangan beri akses ke orang yang tidak dipercaya
+- Check code sebelum jalanin
+- Gunakan dengan bijak
+
 ## Catatan
 
 > Resource ini disediakan khusus untuk klien. Usage dan modification terserah klien masing-masing.

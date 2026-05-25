@@ -1,0 +1,238 @@
+*DAFTAR PATTERN WAWeb.js*
+━━━━━━━━━━━━━━━━━━━━
+
+*1. WEBSOCKET ENDPOINTS*
+• wss://web.whatsapp.com/ws/chat
+• wss://dev-web.whatsapp.com/ws/chat
+
+*2. API ENDPOINTS*
+• /flows/json/
+
+*3. MODULE DEFINITIONS*
+
+*A. CORE MODULES:*
+• MetaConfigMap
+• FBLogger
+• BitMap
+• ErrorGuard
+• CircularBuffer
+• ErrorPubSub
+• Promise
+
+*B. LOGGING & ERROR:*
+• WAHex
+• WALogger
+• WALoggerUtils
+• WATagsLogger
+• WAWebLoggerFormatMessage
+• WAWebLoggerOptimizer
+• WAWebLoggerUtils
+• WAWebNormalizeStack
+• WAWebLoggerImpl
+• WAWebLogLineSanitizer
+
+*C. BINARY PROTOCOL:*
+• WABinary
+• decodeProtobuf
+• encodeProtobuf
+• WAWebProtobufsAdv.pb
+• WAWebProtobufSyncAction.pb
+• WAWebProtobufsProtocol.pb
+• WAWebProtobufsUserPassword.pb
+• WAWebProtobufsChatLockSettings.pb
+• WAWebProtobufsDeviceCapabilities.pb
+• WAWebProtobufsCompanionReg.pb
+
+*D. WEBSOCKET & CONNECTION:*
+• WebSocketTransport
+• WAWebSocketLogoutJob
+• WAWebLoginWamEvent
+• WAWebWamLoginMetricUtils
+
+*E. BACKEND & API:*
+• WAWebBackendApi
+• WAWebApiContact
+
+*F. DATABASE & STORAGE:*
+• WAWebIdb
+• WAWebStorage
+• WAWebStorageSchema
+• WAWebModelStorageUtils
+• WAWebModelStorageVersions
+• WAWebDexieCastTypes
+• WAWebDbEncryptionKey
+• WAWebIndexedDBPurge
+• WAWebWAWCStorage
+• WAWebLocalStorage
+
+*G. AUTHENTICATION:*
+• WAWebCreds
+• WAWebUserPrefs
+• WAWebLogoutReasonConstants
+
+*H. CHAT & MESSAGES:*
+• WAWebChatStore
+• WAWebContactStore
+• WAWebMessageStore
+• WAWebSchemaChat
+• WAWebSchemaContact
+• WAWebSchemaVersions
+
+*I. USER & CONTACT:*
+• WAWebUserPrefsMeUser
+• WAWebWid
+• WAWebWidFactory
+• WAJids
+• WAWebBizCoex
+
+*J. QR CODE & LOGIN:*
+• WAWebLoginWamEvent
+• WAWebWamEnumLoginResultType
+• WAWebWamEnumConnectionSequenceStepType
+
+*K. PROTOCOL & SYNC:*
+• WAWebSyncdCollectionHandlerTypesConverter
+• WASyncAction.pb
+• WAServerSync.pb
+• WAWebLidAwareContactsDB
+
+*L. CRASH & TELEMETRY:*
+• WAWebCrashLogWamEvent
+• WAWebCrashlogConstants
+• WAWebCrashlogUserAgent
+• WAWebWamCodegenUtils
+• WAWebWamCodegenWamEvent
+• WAWebWamInitQueue
+• WAWebWamRuntimeProvider
+• WAWebWamDroppedEventWamEvent
+• WAWebWamEnumCrashType
+• WAWebWamEnumCrashApplicationState
+
+*M. UTILITIES:*
+• WAWebUA (User Agent)
+• WAWebABProps (A/B Testing)
+• WAWebABPropsConfigs
+• WAWebDebounce
+• WAWebGetSpecialAbProps
+• WAWebRuntimeEnvironmentUtils
+• WAWebEnvironment
+• WAWebBuildConstants
+
+*4. ENCRYPTION & SECURITY*
+• crypto_onetimeauth
+• crypto_onetimeauth_verify
+• WAWebDbEncryptionKey
+• WAWebWorkerEncKeyHelper
+• WAProtobufsUserPassword.pb
+
+*5. MESSAGE TYPES*
+• MessageKey
+• Message
+• MessageStubType
+• MessageType (text, image, video, audio, document)
+• ExtendedTextMessage
+• ImageMessage
+• VideoMessage
+• AudioMessage
+• DocumentMessage
+• LocationMessage
+• ContactMessage
+• StickerMessage
+
+*6. CHAT TYPES*
+• chat (regular)
+• group
+• broadcast
+• status
+• newsletter
+
+*7. JID PATTERNS (WhatsApp ID)*
+• toGroupJid
+• asChatJid
+• getGroupDomain
+• switchOnChatJidType
+• validateGroupJid
+• validateChatJid
+• unsafeCoerceToChatJid
+• unsafeCoerceToGroupJid
+
+*8. ERROR HANDLING*
+• RMRNotSupportedOnNewsletterMessagesError
+• WALogger.error
+• invariant
+• unrecoverableViolation
+• WebSocket # not opened
+• WebSocket # errored
+
+*9. LOGOUT REASONS*
+• ClientFatalError
+• LidMigrationFailedToParseMapping
+• LidMigrationPeerMappingsMalformed
+• LidMigrationCompanionIncompatibleKillswitch
+• LidMigrationOneOnOneThreadMigrationInternalError
+• UnknownCompanion
+
+*10. DATABASE TABLES*
+• Chat
+• Contact
+• Message
+• MeUser
+• MediaBlob
+• PendingMsgs
+• Starred
+• CallLog
+
+*11. SEARCH COMMANDS*
+
+ cari WS URL:
+`Select-String -Path "WAWeb.js" -Pattern "wss://"`
+
+ cari module WAWeb*:
+`Select-String -Path "WAWeb.js" -Pattern '__d\("WAWeb'`
+
+ cari Binary protocol:
+`Select-String -Path "WAWeb.js" -Pattern "WABinary"`
+
+ cari Protobuf:
+`Select-String -Path "WAWeb.js" -Pattern "Protobuf"`
+
+ cari API:
+`Select-String -Path "WAWeb.js" -Pattern "/flows/"`
+
+ cari WS class:
+`Select-String -Path "WAWeb.js" -Pattern "WebSocketTransport"`
+
+ cari Error:
+`Select-String -Path "WAWeb.js" -Pattern "WALogger"`
+
+ cari Auth:
+`Select-String -Path "WAWeb.js" -Pattern "authenticate|authState|Creds"`
+
+*RINGKASAN FUNGSI UTAMA*
+
+WebSocket Connection:
+`wss://web.whatsapp.com/ws/chat`
+
+API Calls:
+`/flows/json/` + WAWebBackendApi
+
+Binary Protocol:
+`WABinary` + encodeProtobuf
+
+Storage:
+`IndexedDB` via WAWeb-dexie
+
+Auth:
+`WAWebCreds` + WAWebUserPrefs
+
+Encryption:
+`crypto_onetimeauth_verify`
+
+Message Handling:
+`WABinary` decode/encode
+
+Sync:
+`WASyncAction.pb` + WAServerSync.pb
+
+━━━━━━━━━━━━━━━━━━━━
+Source: @rvnnsix_

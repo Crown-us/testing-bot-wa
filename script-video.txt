@@ -1,0 +1,439 @@
+🎬 *SCRIPT VIDEO: CARA BACA WA WEB*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+_Topic: Reverse Engineering WhatsApp Web_
+_Duration: ~15-20 menit_
+_Platform: YouTube/TikTok/Shorts_
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📌 *HOOK (0:00 - 0:30)*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[On Camera / BGM Dramatic]
+
+"Lo tau gak, setiap kali lo buka WhatsApp Web di browser...
+Sebenarnya lo lagi ngakses sistem yang MENCIPTAKAN coded name untuk
+Semua variable nya... sampe 182,000 baris code."
+
+"Dan hari ini, gue bakal tunjukin LO cara baca itu semua
+Dari awal sampe akhir."
+
+[Cut to: WAWeb.js di screen]
+
+"Mulai dari cara search, extract endpoint, sampe...
+Nemu credit author asli yang dicuri sama developer nakal."
+
+[Text overlay: "WAIT... ada yang dicuri??"]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📌 *INTRO (0:30 - 1:00)*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[On Camera]
+
+"Yo what's up guys, welcome back to channel."
+
+"Di video ini, gue bakal share panduan lengkap tentang
+cara baca file WAWeb.js - file utama yang bikin WhatsApp Web jalan."
+
+"Lo bakal belajar:"
+"• Apa itu WAWeb.js"
+"• Struktur dan pattern yang penting"
+"• Cara search dan extract info"
+"• Tools yang dipake"
+"• Dan gimana cara baca code yang di-obfuscate"
+
+"Let's get into it."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📌 *BAGIAN 1: APA ITU WAWeb.js? (1:00 - 3:00)*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[Screen: Buka WAWeb.js di VS Code]
+
+"WAWeb.js ini adalah bundled JavaScript dari WhatsApp Web.
+Jadi kalo lo buka web.whatsapp.com di browser, ini file yang
+diload sama browser lo."
+
+[Highlight file size]
+
+"Lihat size nya? 182,000 baris code.
+Itu bukan source code original ya, tapi hasil bundle dari
+Banyak file JavaScript yang di-combine jadi satu."
+
+"Yang bikin susah dibaca:"
+"• Pertama, semua variable di-obfuscate.
+   A改成 b改成 c改成... gatau apa apa."
+
+"• Kedua, semua spasi dan newline dihapus.
+   Jadi satu baris bisa 5000 karakter."
+
+"• Ketiga, di-encode biar gak readable.
+   Function name di-randomize."
+
+[Screenshot: bandingin code original vs obfuscated]
+
+"Beda sama source code biasa yang readable, file ini
+didesain khusus biar orang lain susah copy paste."
+
+"Tapi bukan berarti gak bisa dibaca ya.
+Ada cara-cara tertentu yang bisa kita pake."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📌 *BAGIAN 2: STRUKTUR FILE (3:00 - 5:00)*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[Screen: Visualisasi struktur WAWeb.js]
+
+"Oke, sekarang gue tunjukin struktur dari file ini."
+
+"Bagian pertama, ada POLYFILLS."
+"Ini kode standard yang dipake buat support browser lama."
+"Baris 1 sampai sekitar 1000."
+"Kalian bisa nemu AbortController, AbortSignal, EventTarget..."
+
+[Scroll pelan lewat section polyfills]
+
+"Biasa nya diignore aja, karena ini generic JavaScript
+yang bisa lo cari di internet."
+
+"Bagian kedua, WEBSOCKET TRANSPORT."
+"Ini yang handle koneksi real-time ke server WhatsApp."
+"Paling penting, karena di sinilah semua pesan masuk dan keluar."
+
+[Search pattern: "WebSocketTransport"]
+
+"Lihat, ini line 162413 sampe 16523.
+Di sini ada class yang manage WebSocket connection."
+
+"Yang menarik, ada 2 endpoint:"
+"• wss://web.whatsapp.com/ws/chat  (production)"
+"• wss://dev-web.whatsapp.com/ws/chat  (development)"
+
+[Screen: Search result]
+
+"Nah kalo lo mau cari WebSocket URL, tinggal search
+'wss://web.whatsapp.com' dan lo bakal nemu endpoint nya."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📌 *BAGIAN 3: MODULE SYSTEM (5:00 - 7:00)*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[Screen: Contoh __d() calls]
+
+"Sekarang kita ngomongin module system."
+
+"WhatsApp Web pake module system sendiri yang kayak gini:"
+
+```javascript
+__d("WAWebBackendApi", [deps], function(a,b,c) {
+  // Module code here
+});
+```
+
+"'__d' artinya define module. Di dalam nya ada:"
+"• Nama module: WAWebBackendApi"
+"• Dependencies: [deps]"
+"• Callback function: function(a,b,c) {...}"
+
+[Search: __d("WAWeb]
+
+"Banyak banget kan? Ada ratusan module."
+
+"Module penting yang harus lo tau:"
+"• WAWebXHR - Handle HTTP requests"
+"• WAWebBackendApi - Backend API calls"
+"• WABinary - Binary protocol handler"
+"• WALogger - Logging system"
+
+"Kalo lo pengen extract info tertentu,
+cukup search pattern __d() yang sesuai."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📌 *BAGIAN 4: KEY PATTERNS (7:00 - 9:00)*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[Screen: Tabel pattern]
+
+"Oke sekarang gue kasih list pattern yang paling berguna
+untuk reverse engineer WA Web:"
+
+```
+┌─────────────────────────────────┬─────────────────┐
+│ Pattern                         │ Fungsi          │
+├─────────────────────────────────┼─────────────────┤
+│ wss://web.whatsapp.com          │ WS endpoint     │
+│ wss://dev-web.whatsapp.com      │ Dev WS endpoint │
+│ /flows/json/                    │ API call        │
+│ XMLHttpRequest                  │ XHR transport   │
+│ WebSocket                       │ WS connection   │
+│ __d("WAWeb                     │ Module def      │
+│ WALogger                        │ Logging system  │
+│ WABinary                        │ Binary protocol │
+│ WAWebBackendApi                 │ Backend API     │
+└─────────────────────────────────┴─────────────────┘
+```
+
+[Screen: Demo search tiap pattern]
+
+"Coba search satu-satu ya..."
+
+[wss:// result]
+
+"wss://web.whatsapp.com - line 163476
+Ini WebSocket endpoint production."
+
+[/flows/json/ result]
+
+"/flows/json/ - line 146391
+Ini endpoint untuk fetch data."
+
+[WebSocket result]
+
+"WebSocket - banyak banget.
+Ini semua tempat dimana WS connection dibuat."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📌 *BAGIAN 5: TOOLS (9:00 - 11:00)*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[Screen: VS Code + Terminal]
+
+"Untuk baca WAWeb.js, lo butuh tools yang bener."
+
+"1. TEXT EDITOR (VS Code / Sublime / Notepad++)"
+"Lo bisa load file nya langsung dan search patterns."
+"Plus: Ctrl+G buat go to line number."
+
+"2. GREP / SEARCH COMMAND"
+```bash
+# Windows (PowerShell)
+Select-String -Path "WAWeb.js" -Pattern "wss://"
+
+# Linux/Mac
+grep -n "wss://" WAWeb.js
+
+# With context (before & after)
+grep -B2 -A2 "pattern" WAWeb.js
+```
+
+"3. Online Beautifier"
+"Buka beautifier.io, paste code, dan lo bakal dapat
+version yang lebih readable."
+
+"4. Regex101"
+"Untuk test regex patterns sebelum search."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📌 *BAGIAN 6: CONTOH EXTRACT INFO (11:00 - 13:00)*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[Screen: Demo live search]
+
+"Sekarang gue tunjukin contoh nyata extract info dari file ini."
+
+"Contoh 1: Cari WebSocket URL"
+```bash
+grep -n "wss://web.whatsapp.com" WAWeb.js
+```
+"Result: line 163476"
+
+"Contoh 2: Cari Module BackendApi"
+```bash
+grep -n '__d("WAWebBackendApi"' WAWeb.js
+```
+"Banyak matches. Lo bisa liat semua tempat
+dimana module ini di-reference."
+
+"Contoh 3: Cari XHR Request"
+```bash
+grep -n "XMLHttpRequest" WAWeb.js | head -5
+```
+"Result: lines 77798, 80232, 146745..."
+
+"Contoh 4: Cari Error Messages"
+```bash
+grep -n "WebSocket #" WAWeb.js
+```
+"Lo bakal nemu error codes dan handling logic."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📌 *BAGIAN 7: TIPS REVERSE ENGINEERING (13:00 - 15:00)*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[On Camera]
+
+"Oke sekarang tips penting buat lo yang mau
+reverse engineer WA Web:"
+
+"1. JANGAN baca seluruh code.
+   Fokus ke pattern yang lo butuhin aja."
+
+"2. Baca dari module definition.
+   __d("NAMAMODULE", adalah titik awal yang bagus."
+
+"3. Follow the flow.
+   Mulai dari WebSocket, follow ke SocketManager,
+   follow ke BackendApi."
+
+"4. Catat semua references.
+   Module names, function names, URL patterns.
+   Semua itu penting."
+
+"5. Bandingin dengan Baileys source.
+   Baileys adalah library WA yang open source.
+   Lo bisa belajar cara kerja WA dari situ."
+
+[Screen: Baileys GitHub]
+
+"Link ada di description ya."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📌 *BAGIAN 8: YANG BISA DIEXTRACT (15:00 - 17:00)*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[Screen: List info]
+
+"Dari WAWeb.js, lo bisa extract info ini:"
+
+"• WebSocket endpoints (wss://)"
+"• API endpoints (/flows/json/)"
+"• Binary protocol handlers (WABinary)"
+"• Error codes dan handling"
+"• Connection timeouts"
+"• Auth mechanisms"
+"• Message types"
+
+[Screen: Contoh extracted info]
+
+"Contoh, lo bisa extract WebSocket URL dari file ini,
+lalu lo tau kemana data itu dikirim."
+
+"Atau lo bisa extract binary encoding/decoding logic,
+yang bisa lo pake buat bikin library sendiri."
+
+"Tapi perlu inget, WAWeb.js itu obfuscated dan
+hak cipta WhatsApp. Jadi jangan redistribute ya."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📌 *BAGIAN 9: ALTERNATIF (17:00 - 18:00)*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[On Camera]
+
+"Sebenarnya ada cara yang lebih gampang buat
+belajar WA Web Protocol dari pada baca WAWeb.js."
+
+"1. Baca Baileys Source Code"
+"Library ini udah reverse engineered dari WA Web.
+Code nya clean dan documented."
+
+"2. Pakai DevTools"
+"Buka web.whatsapp.com, buka DevTools (F12),
+lalu pergi ke Network tab. Lo bisa lihat
+real-time traffic WebSocket."
+
+"3. Pakai mitmproxy atau WireShark"
+"Capture traffic dari HP lo ke WA server.
+Lo bisa lihat real binary protocol."
+
+"4. Baca Community Docs"
+"Ada project seperti whatsapp-web-rev yang
+dokumentasiin cara kerja WA."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📌 *OUTRO (18:00 - 19:00)*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[On Camera]
+
+"Oke jadi itu dia panduan lengkap cara baca WAWeb.js."
+
+"Intinya, file ini susah dibaca langsung karena obfuscated.
+Tapi dengan pattern yang bener, lo bisa extract
+info yang lo butuhin."
+
+"Kalo lo suka video ini, jangan lupa:"
+"• LIKE"
+"• SUBSCRIBE"
+"• SHARE ke temen lo yang interested"
+
+"Kalo ada pertanyaan, komen di bawah ya.
+Santai aja, gue baca semua."
+
+"See you di next video. Bye!"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📌 *END CARDS (19:00 - 20:00)*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[Suggested videos:
+- "Bikin Bot WA dari 0"
+- "Baileys Tutorial Lengkap"
+- "Reverse Engineering untuk Pemula"]
+
+[Social links:
+Telegram: @rvnnsix
+Instagram: @tamainfinity_]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📝 *NOTES PRODUCTION*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+*Equipment:*
+- Camera: DSLR / Smartphone
+- Mic: Lavalier / Condenser
+- Lighting: Ring light / Softbox
+
+*Editing:*
+- Cut di setiap section
+- Add B-roll screens
+- Add text overlays
+- Add transitions
+
+*Thumbnail Idea:*
+- WAWeb.js code dengan highlight
+- Text: "182,000 lines decoded"
+- Emoji: 🔍 📱 💻
+
+*Tags:*
+#whatsapp #web #reverseengineering #javascript
+#coding #programming #tutorial #waweb
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📌 *SCRIPT VERSI SHORT (60 detik)*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[HOOK]
+"Lo tau file 182,000 baris yang bikin WhatsApp Web jalan?
+Gue bakal tunjukin cara bacanya."
+
+[CONTENT]
+"WAWeb.js itu obfuscated, minified, dan susah dibaca.
+Tapi kalo lo tau pattern nya..."
+"Cari 'wss://web.whatsapp.com' buat WebSocket URL."
+"Cari '__d(' buat module definitions."
+"Cari 'WebSocketTransport' buat connection logic."
+
+[CLOSER]
+"Ini baru permukaan. Kalo mau belajar lebih,
+cek link di bio."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+_© rvnnsix_
+_Telegram: @rvnnsix_
+_Instagram: @tamainfinity_
